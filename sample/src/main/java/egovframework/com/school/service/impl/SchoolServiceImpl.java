@@ -23,9 +23,9 @@ public class SchoolServiceImpl extends EgovAbstractServiceImpl implements School
 	}
 
 	@Override
-	public HashMap<String, Object> selectSchoolInfo(int schoolId) {
+	public HashMap<String, Object> selectSchoolInfo(HashMap<String, Object> paramMap) {
 		// TODO Auto-generated method stub
-		return schoolDAO.selectSchoolInfo(schoolId);
+		return schoolDAO.selectSchoolInfo(paramMap);
 	}
 
 }
