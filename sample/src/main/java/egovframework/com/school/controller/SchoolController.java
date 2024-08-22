@@ -30,12 +30,12 @@ public class SchoolController {
 	}
 	
 	@RequestMapping("/school/getSchoolInfo.do")
-	public ModelAndView getSchoolInfo(@RequestParam(name="schoolId") int schoolId) {
-		ModelAndView mv = new ModelAndView("school/schoolInfo");
-		System.out.println("1");
-		HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(schoolId);
+	public ModelAndView getSchoolInfo(@RequestParam HashMap<String, Object> paramMap) {
+		ModelAndView mv = new ModelAndView();
+		HashMap<String, Object> schoolInfo = schoolService.selectSchoolInfo(paramMap);
 		
 		mv.addObject("schoolInfo", schoolInfo);
+		mv.setViewName("jsonView");
 		return mv;
 	}
 	

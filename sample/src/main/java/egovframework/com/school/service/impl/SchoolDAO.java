@@ -14,8 +14,8 @@ public class SchoolDAO extends EgovAbstractMapper{
 		return selectList("selectSchoolList");
 	}
 	
-	public HashMap<String, Object> selectSchoolInfo(int schoolId){
-		return selectOne("selectSchoolInfo", schoolId);
+	public HashMap<String, Object> selectSchoolInfo(HashMap<String, Object> paramMap){
+		return selectOne("selectSchoolInfo", paramMap);
 	}
 
 }

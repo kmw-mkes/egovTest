@@ -13,20 +13,20 @@
 	<table style="border: 1px solid #444444;">
 		<tr>
 			<th style="border: 1px solid #444444;">학교명</th>
-			<td style="border: 1px solid #444444;">${schoolInfo.school_name }</td>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolName }</td>
 			
 		</tr>
 		<tr>
 			<th style="border: 1px solid #444444;">지역구</th>
-			<td style="border: 1px solid #444444;">${schoolInfo.school_area }</td>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolArea }</td>
 		</tr>
 		<tr>
 			<th style="border: 1px solid #444444;">학교 주소</th>
-			<td style="border: 1px solid #444444;">${schoolInfo.school_addr }</td>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolAddr }</td>
 		</tr>
 		<tr>
 			<th style="border: 1px solid #444444;">학교 연락처</th>
-			<td style="border: 1px solid #444444;">${schoolInfo.school_phone }</td>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolPhone }</td>
 		</tr>
 		
 	</table>

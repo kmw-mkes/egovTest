@@ -11,7 +11,7 @@
 		FROM tb_school_info
 	</select>
 	
-	<select id="selectSchoolInfo" parameterType="int" resultType="java.util.HashMap">
+	<select id="selectSchoolInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
 		SELECT  school_id,
 				school_name,
 				school_area,

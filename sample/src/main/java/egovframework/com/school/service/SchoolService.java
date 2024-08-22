@@ -7,6 +7,6 @@ public interface SchoolService {
 	
 	public List<HashMap<String, Object>> selectSchoolList();
 	
-	public HashMap<String, Object> selectSchoolInfo(int schoolId);
+	public HashMap<String, Object> selectSchoolInfo(HashMap<String, Object> paramMap);
 
 }
