@@ -3,11 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Insert title here</title>
 <script
   src="https://code.jquery.com/jquery-3.7.1.js"
   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -15,39 +15,35 @@
 <title>Insert title here</title>
 
 <script type="text/javascript">
-	function fn_detail(schoolId){
-		
-		$("#schoolId").val(schoolId);
-		var frm = $("#jsonFrm").serialize();
-		frm.action="/schoolMng/getSchoolInfo.do";
-		frm.submit();
-	}
+	$(document).reade(function(){
+		$("#btn_delete").on('click', function(){
+			
+		});
+	});
 </script>
-
 </head>
 <body>
-	<form id="jsonFrm" name="jsonFrm">
-		<input type="hidden" id="schoolId" name="schoolId" value=""/>
-	</form>
 	<table style="border: 1px solid #444444;">
-	<thead>
 		<tr>
 			<th style="border: 1px solid #444444;">학교명</th>
-			<th style="border: 1px solid #444444;">지역구</th>
-			<th style="border: 1px solid #444444;">학교 주소</th>
-			<th style="border: 1px solid #444444;">학교 연락처</th>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolName }</td>
+			
 		</tr>
-	</thead>
-	<tbody >
-		<c:forEach var="school" items="${schoolList }">
-			<tr>
-				<td style="border: 1px solid #444444;"><a href="javascript:fn_detail(${school.schoolId });" >${school.schoolName }</a></td>
-				<td style="border: 1px solid #444444;">${school.schoolArea }</td>
-				<td style="border: 1px solid #444444;">${school.schoolAddr }</td>
-				<td style="border: 1px solid #444444;">${school.schoolPhone }</td>
-			</tr>
-		</c:forEach>
-	</tbody>
+		<tr>
+			<th style="border: 1px solid #444444;">지역구</th>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolArea }</td>
+		</tr>
+		<tr>
+			<th style="border: 1px solid #444444;">학교 주소</th>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolAddr }</td>
+		</tr>
+		<tr>
+			<th style="border: 1px solid #444444;">학교 연락처</th>
+			<td style="border: 1px solid #444444;">${schoolInfo.schoolPhone }</td>
+		</tr>
+		
 	</table>
+	<input type="button" id="btn_delete" name="btn_delete" value="삭제"/>S
+	<a href="/schoolMng/getSchoolList.do">목록으로</a>
 </body>
 </html>
