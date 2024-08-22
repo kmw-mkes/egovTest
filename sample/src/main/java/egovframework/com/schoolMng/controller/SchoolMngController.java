@@ -44,4 +44,26 @@ public class SchoolMngController {
 		return "schoolMng/schoolRegister";
 	}
 	
+	@RequestMapping("/schoolMng/insertSchoolInfo.do")
+	public ModelAndView insertSchoolInfo(@RequestParam HashMap<String, Object> paramMap) {
+		ModelAndView mv = new ModelAndView();
+		
+		int resultChk = 0;
+		resultChk = schoolMngService.insertSchoolMngInfo(paramMap);
+		mv.addObject("resultChk", resultChk);
+		mv.setViewName("jsonView");
+		return mv;
+	}
+	
+	@RequestMapping("/schoolMng/deleteSchoolInfo.do")
+	public ModelAndView deleteSchoolInfo(@RequestParam HashMap<String, Object> paramMap) {
+		ModelAndView mv = new ModelAndView();
+		
+		int resultChk = 0;
+		resultChk = schoolMngService.deleteSchoolMngInfo(paramMap);
+		mv.addObject("resultChk", resultChk);
+		mv.setViewName("jsonView");
+		return mv;
+	}
+	
 }

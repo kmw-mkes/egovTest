@@ -21,7 +21,7 @@
 		WHERE school_id = #{schoolIdx}
 	</select>
 	
-	<insert id="insertSchoolInfo" parameterType="java.util.HashMap">
+	<insert id="insertSchoolMngInfo" parameterType="java.util.HashMap">
 		INSERT INTO tb_school_info(
 			school_name,
 		    school_area,
@@ -35,7 +35,7 @@
 		)
 	</insert>
 	
-	<delete id="deleteSchoolInfo" parameterType="java.util.HashMap">
+	<delete id="deleteSchoolMngInfo" parameterType="java.util.HashMap">
 		DELETE FROM tb_school_info
 		WHERE school_id = #{schoolId}
 	</delete>

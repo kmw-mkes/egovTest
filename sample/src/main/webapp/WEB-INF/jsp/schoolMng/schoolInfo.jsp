@@ -15,14 +15,35 @@
 <title>Insert title here</title>
 
 <script type="text/javascript">
-	$(document).reade(function(){
+	$(document).ready(function(){
 		$("#btn_delete").on('click', function(){
-			
+			fn_delete();
 		});
 	});
+	
+	function fn_delete(){
+		var frm = $("#frm").serialize();
+		$.ajax({
+		    url: '/schoolMng/deleteSchoolInfo.do',
+		    method: 'post',
+			data : frm,
+		    dataType : 'json',
+		    success: function (data, status, xhr) {
+		        if(data.resultChk > 0){
+		        	alert("삭제되었습니다.");
+		        	location.href="/schoolMng/getSchoolList.do";
+		        }
+		    },
+		    error: function (data, status, err) {
+		    }
+		});
+	}
 </script>
 </head>
 <body>
+	<form id="frm" name="frm">
+		<input type="hidden" id="schoolId" name="schoolId" value="${schoolInfo.schoolId }"/>
+	</form>
 	<table style="border: 1px solid #444444;">
 		<tr>
 			<th style="border: 1px solid #444444;">학교명</th>

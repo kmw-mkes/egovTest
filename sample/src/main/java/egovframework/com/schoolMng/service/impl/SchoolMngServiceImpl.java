@@ -30,5 +30,21 @@ public class SchoolMngServiceImpl extends EgovAbstractServiceImpl implements Sch
 		HashMap<String, Object> schoolInfo = schoolMngDAO.selectSchoolInfo(schoolIdx);	
 		return schoolInfo;
 	}
+
+	@Override
+	public int insertSchoolMngInfo(HashMap<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		int resultChk = 0;
+		resultChk = schoolMngDAO.insertSchoolMngInfo(paramMap);
+		return resultChk;
+	}
+
+	@Override
+	public int deleteSchoolMngInfo(HashMap<String, Object> paramMap) {
+		// TODO Auto-generated method stub
+		int resultChk = 0;
+		resultChk = schoolMngDAO.deleteSchoolMngInfo(paramMap);
+		return resultChk;
+	}
 	
 }
