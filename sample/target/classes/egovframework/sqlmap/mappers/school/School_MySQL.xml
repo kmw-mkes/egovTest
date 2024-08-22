@@ -18,7 +18,7 @@
 				school_addr,
 				school_phone
 		FROM tb_school_info
-		WHERE school_id = #{schoolId}
+		WHERE school_id = ${schoolId}
 	</select>
 
 </mapper>

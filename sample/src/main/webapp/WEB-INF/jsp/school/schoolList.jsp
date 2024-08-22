@@ -51,10 +51,17 @@
 	<tbody >
 		<c:forEach var="school" items="${schoolList }">
 			<tr>
+<<<<<<< HEAD
 				<td style="border: 1px solid #444444;"><a href="javascript:fn_detail(${school.schoolId });" >${school.schoolName }</a></td>
 				<td style="border: 1px solid #444444;">${school.schoolArea }</td>
 				<td style="border: 1px solid #444444;">${school.schoolAddr }</td>
 				<td style="border: 1px solid #444444;">${school.schoolPhone }</td>
+=======
+				<td style="border: 1px solid #444444;"><a href="javascript:fn_detail(${school.school_id });" >${school.school_name }</a></td>
+				<td style="border: 1px solid #444444;">${school.school_area }</td>
+				<td style="border: 1px solid #444444;">${school.school_addr }</td>
+				<td style="border: 1px solid #444444;">${school.school_phone }</td>
+>>>>>>> refs/remotes/origin/master
 			</tr>
 		</c:forEach>
 	</tbody>
