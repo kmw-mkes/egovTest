@@ -3,22 +3,42 @@
 <mapper namespace="SchoolDAO">
 
 	<select id="selectSchoolList" resultType="java.util.HashMap">
-		SELECT  school_id,
-				school_name,
-				school_area,
-				school_addr,
-				school_phone
+		SELECT  school_id AS schoolId,
+				school_name AS schoolName,
+		        school_area AS schoolArea,
+		        school_addr AS schoolAddr,
+		        school_phone AS schoolPhone
 		FROM tb_school_info
 	</select>
 	
-	<select id="selectSchoolInfo" parameterType="java.util.HashMap" resultType="java.util.HashMap">
-		SELECT  school_id,
-				school_name,
-				school_area,
-				school_addr,
-				school_phone
+	<select id="selectSchoolInfo" parameterType="int" resultType="java.util.HashMap">
+		SELECT  school_id AS schoolId,
+				school_name AS schoolName,
+		        school_area AS schoolArea,
+		        school_addr AS schoolAddr,
+		        school_phone AS schoolPhone
 		FROM tb_school_info
 		WHERE school_id = ${schoolId}
 	</select>
+	
+	<insert id="insertSchoolInfo" parameterType="java.util.HashMap">
+		INSERT INTO tb_school_info(
+			school_name,
+		    school_area,
+		    school_addr,
+		    school_phone
+		) VALUES (
+			#{schoolName},
+		    #{schoolArea},
+		    #{schoolAddr},
+		    #{schoolPhone}
+		)
+	</insert>
+	
+	<delete id="deleteSchoolInfo" parameterType="java.util.HashMap">
+		DELETE FROM tb_school_info
+		WHERE school_id = #{schoolId}
+	</delete>
+	
 
 </mapper>

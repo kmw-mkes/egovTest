@@ -38,6 +38,12 @@
 		    }
 		});
 	}
+	
+	function fn_update(){
+		var frm = $("#frm");
+		frm.attr("action", "/schoolMng/registerSchool.do");
+		frm.submit();
+	}
 </script>
 </head>
 <body>
@@ -64,7 +70,8 @@
 		</tr>
 		
 	</table>
-	<input type="button" id="btn_delete" name="btn_delete" value="삭제"/>S
+	<input type="button" id="btn_delete" name="btn_delete" value="삭제"/>
+	<input type="button" id="btn_update" name="btn_update"  value="수정" onclick="javascript:fn_update();"/>
 	<a href="/schoolMng/getSchoolList.do">목록으로</a>
 </body>
 </html>
