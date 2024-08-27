@@ -32,7 +32,9 @@
 		        	innerHtml += data.list[i].rnum;
 		        	innerHtml += '</td>';
 		        	innerHtml += '<td>';
+		        	innerHtml += '<a href="javascript:fn_detail('+data.list[i].studentId+');">';
 		        	innerHtml += data.list[i].studentName;
+		        	innerHtml += '</a>';
 		        	innerHtml += '</td>';
 		        	innerHtml += '<td>';
 		        	innerHtml += data.list[i].schoolName;
@@ -49,9 +51,20 @@
 		});
 	}
 	
+	function fn_detail(studentId){
+		$("#studentId").val(studentId);
+		var frm = $("#listFrm");
+		frm.attr("method", "POST");
+		frm.attr("action", "/studentMng/getStudentMngInfo.do");
+		frm.submit();
+	}
+	
 </script>
 </head>
 <body>
+	<form id="listFrm" name="listFrm" action="">
+		<input type="hidden" id="studentId" name="studentId" value=""/>
+	</form>
 	<table style="border: 1px solid #444444;">
 	<thead>
 		<tr>

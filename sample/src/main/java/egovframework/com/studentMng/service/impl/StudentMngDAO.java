@@ -13,5 +13,9 @@ public class StudentMngDAO extends EgovAbstractMapper{
 	public List<HashMap<String, Object>> selectStudentMngList(){
 		return selectList("selectStudentMngList");
 	}
+	
+	public HashMap<String, Object> selectStudentMngInfo(int studentId){
+		return selectOne("selectStudentMngInfo", studentId);
+	}
 
 }
