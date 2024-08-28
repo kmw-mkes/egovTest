@@ -26,5 +26,6 @@
 		ON A.school_id = B.school_id
 		WHERE A.student_id = #{studentId}
 	</select>
+
 	
 </mapper>

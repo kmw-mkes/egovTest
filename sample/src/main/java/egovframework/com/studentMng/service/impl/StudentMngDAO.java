@@ -18,4 +18,5 @@ public class StudentMngDAO extends EgovAbstractMapper{
 		return selectOne("selectStudentMngInfo", studentId);
 	}
 
+
 }
