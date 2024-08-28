@@ -75,5 +75,18 @@ public class StudentMngController {
 		return "studentMng/studentMngRegister";
 	}
 	
+	@RequestMapping("/studentMng/insertStudentMng.do")
+	public ModelAndView insertStudentMng(@RequestParam HashMap<String, Object> paramMap) {
+		ModelAndView mv = new ModelAndView();
+		
+		System.out.println(paramMap.toString());
+		int resultChk = 0;
+		resultChk = studentMngService.insertStudentMng(paramMap);
+		
+		mv.addObject("resultChk", resultChk);
+		mv.setViewName("jsonView");
+		return mv;
+	}
+	
 
 }

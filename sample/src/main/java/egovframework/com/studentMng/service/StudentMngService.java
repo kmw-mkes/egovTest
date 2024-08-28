@@ -8,5 +8,7 @@ public interface StudentMngService {
 	
 	public HashMap<String, Object> selectStudentMngInfo(int studentId);
 	
+	public int insertStudentMng(HashMap<String, Object> paramMap);
+	
 
 }

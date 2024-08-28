@@ -15,6 +15,30 @@
 	$(document).ready(function(){
 		
 	});
+	
+	function fn_insert(){
+		var frm = $("#frm").serialize();
+		$.ajax({
+		    url: '/studentMng/insertStudentMng.do',
+		    method: 'post',
+		    data : frm,
+		    dataType : 'json',
+		    success: function (data, status, xhr) {
+		        if(data.resultChk > 0){
+		        	alert("저장되었습니다.");
+		        	var frm = $("#frm");
+		        	frm.attr("action", "/studentMng/getStudentMngList.do");
+		        	frm.attr("method", "POST");
+		        	frm.submit();
+		        	
+		        	//location.href = "/studentMng/getStudentMngList.do";
+		        	
+		        }
+		    },
+		    error: function (data, status, err) {
+		    }
+		});
+	}
 </script>
 </head>
 <body>
@@ -46,7 +70,7 @@
 		</tr>
 	</table>
 </form>
-<a href="#">등록</a>
+<a href="javascript:fn_insert();">등록</a>
 
 </body>
 </html>
